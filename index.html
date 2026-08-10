@@ -32,8 +32,8 @@
     }
 
     /* ═══ RESET ════════════════════════════════════════════════ */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; max-width: 100%; }
+    html { scroll-behavior: smooth; overflow-x: hidden; max-width: 100vw; }
     body {
       font-family: var(--sans);
       background: var(--cream-light);
@@ -212,6 +212,8 @@
       max-width: var(--wrap);
       margin: 0 auto;
       padding: var(--pad) 2rem;
+      box-sizing: border-box;
+      width: 100%;
     }
     .eyebrow {
       font-size: .68rem;
@@ -489,7 +491,7 @@
       grid-template-columns: 1fr 1fr;
       gap: 2.5rem;
     }
-    .team-card { display: flex; flex-direction: column; flex: 0 0 calc(50% - 1.25rem); max-width: calc(50% - 1.25rem); }
+    .team-card { display: flex; flex-direction: column; width: 100%; }
     .team-photo {
       width: 100%;
       aspect-ratio: 3/4;
@@ -847,8 +849,7 @@
       .ueber-grid,
       .kurs-grid,
       .kontakt-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-      .team-grid { gap: 1.5rem; }
-      .team-card { flex: 0 0 100%; max-width: 100%; }
+      .team-grid { gap: 1.5rem; grid-template-columns: 1fr; }
 
       .ueber-img-wrap { max-width: 380px; }
 
